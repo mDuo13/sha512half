@@ -1,0 +1,13 @@
+#!/bin/env python3
+
+import hashlib
+import sys
+
+if len(sys.argv) != 2:
+    exit("Needs exactly 1 argument with the string to hash")
+
+arg_bytes = sys.argv[1].encode()
+m = hashlib.sha512(arg_bytes)
+
+print(m.hexdigest()[:64].upper())
+
